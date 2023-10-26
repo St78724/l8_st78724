@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>What is Sass</title>
+    <meta name="description" content="Simple transition project">
+    <meta name="author" content="Iljuha">
+  
+    <meta name="keywords" content="HTML, CSS">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type = "text/javascript">
+        var imgObj = null;
+        
+        function init() {
+           imgObj = document.getElementById('myImage');
+           imgObj.style.position= 'relative'; 
+           imgObj.style.left = '0px'; 
+        }
+        function moveRight() {
+           imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+        window.onload = init;
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+    <script>
+        $(document).ready(function(){
+            $("#btt1").click(function(){
+                $("#div1").fadeOut();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#btt2").click(function(){
+            $("#div2").fadeIn("slow");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#btt3").click(function(){
+            $("#hiding").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){  
+        $("#btt4").click(function(){  
+            $("#animation").animate({  
+                left: '250px',  
+                opacity: '0.5',  
+                height: '150px',  
+                width: '150px'  
+            });  
+        });  
+    });  
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#slider").click(function(){
+                $("#wall").slideDown("slow");
+            });
+        });
+    </script>
+
+    <style> 
+        #wall, #slider {
+        padding: 10px;
+        text-align: center;
+        background-color: lightblue;
+        border: solid 2px darkslategray;
+        }
+        
+        #wall {
+        padding: 70px;
+        display: none;
+        }
+    </style>
+</head>
+
+        </p>
+        
+        <form>
+             <img id = "myImage" src = "arrow_img.jpg" />
+             <p>Click button below to move the image to right</p>
+             <input type = "button" value = "Click Me" onclick = "moveRight();" />
+        </form>
+
+        <!-- 3 effects -->
+        <hr>
+        <button id="btt1">Click to fade out box</button><br><br>
+        <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+
+        <hr>
+        <button id="btt2">Click to fade in box</button><br><br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+
+        <hr>
+        <div id="slider">Click to slide down box</div>
+        <div id="wall">Oh hello there!</div>
+
+        <!-- event -->
+        <hr>
+        <p id="hiding">Sample paragraph to hide</p>
+        <button id="btt3">Click here to hide</button>
+
+        <!-- animation -->
+        <hr>
+        <button id="btt4">Start Animation</button>  
+        <div id="animation" style="width:80px;height:80px;background-color:red;"></div>  
+    </div>
+</body>
+</html>
